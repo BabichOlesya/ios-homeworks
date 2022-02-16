@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		C6F1E45627BDA72A009765B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E45527BDA72A009765B0 /* AppDelegate.swift */; };
 		C6F1E45827BDA72A009765B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E45727BDA72A009765B0 /* SceneDelegate.swift */; };
-		C6F1E45A27BDA72A009765B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E45927BDA72A009765B0 /* ViewController.swift */; };
 		C6F1E45D27BDA72A009765B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E45B27BDA72A009765B0 /* Main.storyboard */; };
 		C6F1E45F27BDA72C009765B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E45E27BDA72C009765B0 /* Assets.xcassets */; };
 		C6F1E46227BDA72C009765B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E46027BDA72C009765B0 /* LaunchScreen.storyboard */; };
 		C6F1E46A27BDAAC7009765B0 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E46927BDAAC7009765B0 /* ProfileView.xib */; };
+		C6F1E46C27BDAF2A009765B0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E46B27BDAF2A009765B0 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C6F1E45227BDA72A009765B0 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F1E45527BDA72A009765B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F1E45727BDA72A009765B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6F1E45927BDA72A009765B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6F1E45C27BDA72A009765B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6F1E45E27BDA72C009765B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6F1E46127BDA72C009765B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6F1E46327BDA72C009765B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F1E46927BDAAC7009765B0 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		C6F1E46B27BDAF2A009765B0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +60,12 @@
 			children = (
 				C6F1E45527BDA72A009765B0 /* AppDelegate.swift */,
 				C6F1E45727BDA72A009765B0 /* SceneDelegate.swift */,
-				C6F1E45927BDA72A009765B0 /* ViewController.swift */,
 				C6F1E45B27BDA72A009765B0 /* Main.storyboard */,
 				C6F1E45E27BDA72C009765B0 /* Assets.xcassets */,
 				C6F1E46027BDA72C009765B0 /* LaunchScreen.storyboard */,
 				C6F1E46327BDA72C009765B0 /* Info.plist */,
 				C6F1E46927BDAAC7009765B0 /* ProfileView.xib */,
+				C6F1E46B27BDAF2A009765B0 /* ProfileView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F1E45A27BDA72A009765B0 /* ViewController.swift in Sources */,
+				C6F1E46C27BDAF2A009765B0 /* ProfileView.swift in Sources */,
 				C6F1E45627BDA72A009765B0 /* AppDelegate.swift in Sources */,
 				C6F1E45827BDA72A009765B0 /* SceneDelegate.swift in Sources */,
 			);
