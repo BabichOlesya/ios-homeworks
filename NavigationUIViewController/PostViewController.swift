@@ -12,7 +12,6 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myPost = Post()
         let titlePost = UILabel()
         titlePost.text = myPost.title
         self.title = myPost.title

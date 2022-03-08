@@ -37,3 +37,4 @@ struct Post {
     let title: String = "Пост"
 }
 
+let myPost = Post()
