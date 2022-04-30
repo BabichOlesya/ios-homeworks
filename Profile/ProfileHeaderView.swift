@@ -52,7 +52,7 @@ class ProfileHeaderView: UIView {
         let showButton = UIButton()
         showButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         showButton.setTitle("Установить статус", for: .normal)
-        showButton.backgroundColor = .systemBlue
+        showButton.backgroundColor = myColor
         showButton.layer.shadowColor = UIColor.black.cgColor
         showButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         showButton.layer.cornerRadius = 4

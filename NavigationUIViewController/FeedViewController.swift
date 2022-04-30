@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
         let postButton1 = UIButton()
         postButton1.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
         postButton1.setTitle("Кнопка", for: .normal)
-        postButton1.backgroundColor = .systemPink
+        postButton1.backgroundColor = myColor
         postButton1.layer.cornerRadius = 10
         postButton1.translatesAutoresizingMaskIntoConstraints = false
         return postButton1
@@ -29,7 +29,7 @@ class FeedViewController: UIViewController {
         let postButton2 = UIButton()
         postButton2.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
         postButton2.setTitle("Еще кнопка", for: .normal)
-        postButton2.backgroundColor = .systemBlue
+        postButton2.backgroundColor = myColor
         postButton2.layer.cornerRadius = 10
         postButton2.translatesAutoresizingMaskIntoConstraints = false
         return postButton2
