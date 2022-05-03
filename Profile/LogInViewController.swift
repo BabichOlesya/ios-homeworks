@@ -71,20 +71,6 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
-    private lazy var invalidLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 12)
-        label.numberOfLines = 5
-        label.contentMode = .scaleToFill
-        label.textAlignment = .center
-        label.isHidden = true
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 3
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -105,7 +91,6 @@ class LoginViewController: UIViewController {
             passwordField.trigger()
                 } else {
                     navigationController?.pushViewController(profileViewController, animated: true)
-                    invalidLabel.isHidden = true
         }
     }
     
@@ -164,20 +149,23 @@ class LoginViewController: UIViewController {
         scrollFieldView.addSubview(logoImage)
         scrollFieldView.addSubview(fieldStackView)
         scrollFieldView.addSubview(loginButton)
-        scrollFieldView.addSubview(invalidLabel)
         fieldStackView.addArrangedSubview(loginField)
         fieldStackView.addArrangedSubview(passwordField)
 
         var constraints = [NSLayoutConstraint]()
         
-        constraints.append(scrollFieldView.topAnchor.constraint(equalTo: view.topAnchor))
+        constraints.append(scrollFieldView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
         constraints.append(scrollFieldView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
-        constraints.append(scrollFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
-        constraints.append(scrollFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+        constraints.append(scrollFieldView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor))
+        constraints.append(scrollFieldView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor))
         constraints.append(scrollFieldView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         
-        constraints.append(fieldStackView.topAnchor.constraint(lessThanOrEqualTo: logoImage.bottomAnchor, constant: 100))
+        
+        constraints.append(fieldStackView.topAnchor.constraint(lessThanOrEqualTo: logoImage.bottomAnchor, constant: 60))
         constraints.append(fieldStackView.centerXAnchor.constraint(equalTo: scrollFieldView.centerXAnchor))
+        constraints.append(fieldStackView.leadingAnchor.constraint(equalTo: scrollFieldView.leadingAnchor, constant: 20))
+        constraints.append(fieldStackView.trailingAnchor.constraint(equalTo: scrollFieldView.trailingAnchor, constant: 20))
+        
         let leadingStackConstraint = fieldStackView.leadingAnchor.constraint(equalTo: scrollFieldView.leadingAnchor)
         let trailingStackConstraint = fieldStackView.trailingAnchor.constraint(equalTo: scrollFieldView.trailingAnchor)
         leadingStackConstraint.priority = UILayoutPriority(999)
@@ -186,27 +174,23 @@ class LoginViewController: UIViewController {
         constraints.append(trailingStackConstraint)
         
         constraints.append(logoImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
-        constraints.append(logoImage.widthAnchor.constraint(equalToConstant: 120))
-        constraints.append(logoImage.heightAnchor.constraint(equalToConstant: 120))
-        constraints.append(logoImage.topAnchor.constraint(equalTo: self.scrollFieldView.topAnchor, constant: 60))
+        constraints.append(logoImage.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90))
+        constraints.append(logoImage.widthAnchor.constraint(equalToConstant: 100))
+        constraints.append(logoImage.heightAnchor.constraint(equalToConstant: 100))
         
-        constraints.append(loginButton.topAnchor.constraint(equalTo: self.fieldStackView.bottomAnchor, constant: 100))
+        constraints.append(loginButton.topAnchor.constraint(equalTo: self.fieldStackView.bottomAnchor, constant: 20))
         constraints.append(loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
-        constraints.append(loginButton.widthAnchor.constraint(equalToConstant: 150))
-        constraints.append(loginButton.heightAnchor.constraint(equalToConstant: 50))
+        constraints.append(loginButton.leadingAnchor.constraint(equalTo: scrollFieldView.leadingAnchor, constant: 20))
+        constraints.append(loginButton.trailingAnchor.constraint(equalTo: scrollFieldView.trailingAnchor, constant: 20))
+        constraints.append(loginButton.heightAnchor.constraint(equalToConstant: 40))
         let loginButtonBottomAnchor = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         loginButtonBottomAnchor.priority = UILayoutPriority(999)
         constraints.append(loginButtonBottomAnchor)
-        
-        constraints.append(invalidLabel.topAnchor.constraint(equalTo: fieldStackView.bottomAnchor, constant: 5))
-        constraints.append(invalidLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
-        constraints.append(invalidLabel.widthAnchor.constraint(equalToConstant: 200))
-        
+
         NSLayoutConstraint.activate(constraints)
         
         for view in fieldStackView.arrangedSubviews {
             NSLayoutConstraint.activate([
-                view.widthAnchor.constraint(equalToConstant: 200),
                 view.heightAnchor.constraint(equalToConstant: 40)
             ])
         }
@@ -218,4 +202,5 @@ extension LoginViewController: UITextFieldDelegate {
         passwordField.resignFirstResponder()
     }
 }
+
 

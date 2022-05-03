@@ -113,7 +113,7 @@ class ProfileHeaderView: UIView {
         constraints.append(stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
         constraints.append(stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20))
         constraints.append(stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
-        constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20))
+        constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
         constraints.append(stackView.heightAnchor.constraint(equalToConstant: 220))
 
         NSLayoutConstraint.activate(constraints)
