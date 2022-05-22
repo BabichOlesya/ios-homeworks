@@ -63,9 +63,9 @@ class ProfileHeaderView: UIView {
     
     private var status: UITextField = {
         let status = UITextField()
-        status.backgroundColor = .lightGray
+        status.backgroundColor = .white
         status.font = .italicSystemFont(ofSize: 20)
-        status.textColor = .systemGray4
+        status.textColor = .white
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
@@ -84,7 +84,7 @@ class ProfileHeaderView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 45
+        stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

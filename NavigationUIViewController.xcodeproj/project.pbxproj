@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
+		C6C8012D283AF1D800AD784F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012C283AF1D800AD784F /* PostView.swift */; };
+		C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */; };
+		C6C80131283AF32B00AD784F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80130283AF32B00AD784F /* CustomHeaderView.swift */; };
+		C6C80133283AF39600AD784F /* UIview+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80132283AF39600AD784F /* UIview+Extention.swift */; };
+		C6C80135283AF41800AD784F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80134283AF41800AD784F /* DetailViewController.swift */; };
 		C6F1E53027C83B44009765B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E52F27C83B44009765B0 /* AppDelegate.swift */; };
 		C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E53127C83B44009765B0 /* SceneDelegate.swift */; };
 		C6F1E53927C83B46009765B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E53827C83B46009765B0 /* Assets.xcassets */; };
@@ -23,6 +28,11 @@
 
 /* Begin PBXFileReference section */
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		C6C8012C283AF1D800AD784F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = NavigationUIViewController/CustomTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C6C80130283AF32B00AD784F /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomHeaderView.swift; path = NavigationUIViewController/CustomHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		C6C80132283AF39600AD784F /* UIview+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIview+Extention.swift"; path = "NavigationUIViewController/UIview+Extention.swift"; sourceTree = SOURCE_ROOT; };
+		C6C80134283AF41800AD784F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = NavigationUIViewController/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6F1E52C27C83B44009765B0 /* NavigationUIViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationUIViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F1E52F27C83B44009765B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F1E53127C83B44009765B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,9 +100,14 @@
 				C6F1E52F27C83B44009765B0 /* AppDelegate.swift */,
 				C6F1E53127C83B44009765B0 /* SceneDelegate.swift */,
 				C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */,
+				C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */,
+				C6C80130283AF32B00AD784F /* CustomHeaderView.swift */,
 				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
 				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
+				C6C8012C283AF1D800AD784F /* PostView.swift */,
+				C6C80134283AF41800AD784F /* DetailViewController.swift */,
 				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
+				C6C80132283AF39600AD784F /* UIview+Extention.swift */,
 				C6F1E53827C83B46009765B0 /* Assets.xcassets */,
 				C6F1E53A27C83B46009765B0 /* LaunchScreen.storyboard */,
 				C6F1E53D27C83B46009765B0 /* Info.plist */,
@@ -186,10 +201,15 @@
 				C6F1E54627C83C1C009765B0 /* ProfileViewController.swift in Sources */,
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
 				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
+				C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */,
+				C6C80133283AF39600AD784F /* UIview+Extention.swift in Sources */,
 				C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */,
+				C6C80131283AF32B00AD784F /* CustomHeaderView.swift in Sources */,
 				C6F1E54A27C83C76009765B0 /* InfoViewController.swift in Sources */,
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
+				C6C80135283AF41800AD784F /* DetailViewController.swift in Sources */,
 				C6F953A4281DD09A005E8B6F /* Color.swift in Sources */,
+				C6C8012D283AF1D800AD784F /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
