@@ -57,7 +57,8 @@ class FeedViewController: UIViewController {
         buttonStackView.addArrangedSubview(postButton2)
         constraints.append(buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         constraints.append(buttonStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor))
-        constraints.append(buttonStackView.widthAnchor.constraint(equalToConstant: 150))
+        constraints.append(buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30))
+        constraints.append(buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30))
         constraints.append(buttonStackView.heightAnchor.constraint(equalToConstant: 90))
         NSLayoutConstraint.activate(constraints)
     }
