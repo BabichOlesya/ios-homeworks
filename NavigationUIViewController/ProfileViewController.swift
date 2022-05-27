@@ -18,11 +18,14 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.identifier)
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = false
         layout()
     }
     
@@ -46,9 +49,15 @@ extension ProfileViewController: UITableViewDataSource {
         return postView.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
-        cell.setupCell(postView[indexPath.row])
-        return cell
+        if indexPath.row == 0 {
+            let photosCell = tableView.dequeueReusableCell(withIdentifier: PhotosTableViewCell.identifier, for: indexPath) as! PhotosTableViewCell
+//            photosCell.setupCell(photosCell[indexPath.row])
+            return photosCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
+            cell.setupCell(postView[indexPath.row - 1])
+            return cell
+        }
     }
     
 }
@@ -61,6 +70,10 @@ extension ProfileViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let photosVC = PhotosViewController()
+            navigationController?.pushViewController(photosVC, animated: true)
+        }
         let detailVC = DetailViewController()
         detailVC.setupVC(post: postView[indexPath.row])
         present(detailVC, animated: true)
