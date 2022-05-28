@@ -71,17 +71,48 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
+    private lazy var invalidLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 14)
+        label.numberOfLines = 5
+        label.contentMode = .scaleToFill
+        label.textAlignment = .center
+        label.isHidden = true
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 3
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         addConstraint()
         self.navigationController?.isNavigationBarHidden = true
+        
     }
     
+    private lazy var validationData = ValidationData()
+
+    private func validEmail(login: String) -> Bool {
+        let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let validEmail = NSPredicate(format:"SELF MATCHES %@", emailReg)
+        return validEmail.evaluate(with: login)
+    }
+
+    private func validPassword(password : String) -> Bool {
+        let passwordReg =  ("(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&*]).{8,}")
+        let passwordTesting = NSPredicate(format: "SELF MATCHES %@", passwordReg)
+        return passwordTesting.evaluate(with: password) && password.count > 6
+    }
+
     @objc func buttonPressed() {
         let profileViewController = ProfileViewController()
         guard let login = loginField.text else {return}
         guard let password = passwordField.text else {return}
+        let enteredLogin = validEmail(login: login)
+        let enteredPassword = validPassword(password: password)
         if login.isEmpty && password.isEmpty {
             loginField.trigger()
             passwordField.trigger()
@@ -89,8 +120,30 @@ class LoginViewController: UIViewController {
             loginField.trigger()
         } else if password.isEmpty {
             passwordField.trigger()
+        } else {
+            if !enteredPassword && !enteredLogin {
+                invalidLabel.text = validationData.invalidEmailAndPassword
+                invalidLabel.isHidden = false
+                passwordField.trigger()
+                loginField.trigger()
+            } else if !enteredPassword {
+                invalidLabel.text = validationData.invalidPassword
+                invalidLabel.isHidden = false
+                passwordField.trigger()
+            } else if !enteredLogin {
+                invalidLabel.text = validationData.invalidEmail
+                invalidLabel.isHidden = false
+                loginField.trigger()
+            } else {
+                if (enteredLogin && enteredPassword) && (loginField.text != validationData.defaultLogin || passwordField.text != validationData.defaultPassword) {
+                    let alert = UIAlertController(title: "Неверный логин или пароль", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    present(alert, animated: true, completion: nil)
                 } else {
                     navigationController?.pushViewController(profileViewController, animated: true)
+                    invalidLabel.isHidden = true
+                }
+            }
         }
     }
     
@@ -149,6 +202,7 @@ class LoginViewController: UIViewController {
         scrollFieldView.addSubview(logoImage)
         scrollFieldView.addSubview(fieldStackView)
         scrollFieldView.addSubview(loginButton)
+        scrollFieldView.addSubview(invalidLabel)
         fieldStackView.addArrangedSubview(loginField)
         fieldStackView.addArrangedSubview(passwordField)
 
@@ -177,16 +231,22 @@ class LoginViewController: UIViewController {
         constraints.append(logoImage.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90))
         constraints.append(logoImage.widthAnchor.constraint(equalToConstant: 100))
         constraints.append(logoImage.heightAnchor.constraint(equalToConstant: 100))
+
         
         constraints.append(loginButton.topAnchor.constraint(equalTo: self.fieldStackView.bottomAnchor, constant: 20))
         constraints.append(loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
         constraints.append(loginButton.leadingAnchor.constraint(equalTo: scrollFieldView.leadingAnchor, constant: 20))
         constraints.append(loginButton.trailingAnchor.constraint(equalTo: scrollFieldView.trailingAnchor, constant: 20))
+
         constraints.append(loginButton.heightAnchor.constraint(equalToConstant: 40))
         let loginButtonBottomAnchor = loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         loginButtonBottomAnchor.priority = UILayoutPriority(999)
         constraints.append(loginButtonBottomAnchor)
-
+        
+        constraints.append(invalidLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 5))
+        constraints.append(invalidLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
+        constraints.append(invalidLabel.widthAnchor.constraint(equalToConstant: 200))
+        
         NSLayoutConstraint.activate(constraints)
         
         for view in fieldStackView.arrangedSubviews {
@@ -202,5 +262,3 @@ extension LoginViewController: UITextFieldDelegate {
         passwordField.resignFirstResponder()
     }
 }
-
-
