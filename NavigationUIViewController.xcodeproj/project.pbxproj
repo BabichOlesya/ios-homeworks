@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
-		C6C8012D283AF1D800AD784F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012C283AF1D800AD784F /* PostView.swift */; };
+		C696286E2842A797008EA800 /* AvatarAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */; };
+		C69628722842AA4F008EA800 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69628712842AA4F008EA800 /* CollectionView.swift */; };
 		C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */; };
 		C6C80131283AF32B00AD784F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80130283AF32B00AD784F /* CustomHeaderView.swift */; };
 		C6C80133283AF39600AD784F /* UIview+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80132283AF39600AD784F /* UIview+Extention.swift */; };
@@ -31,7 +32,8 @@
 
 /* Begin PBXFileReference section */
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
-		C6C8012C283AF1D800AD784F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnimationViewController.swift; sourceTree = "<group>"; };
+		C69628712842AA4F008EA800 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = NavigationUIViewController/CollectionView.swift; sourceTree = SOURCE_ROOT; };
 		C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = NavigationUIViewController/CustomTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C6C80130283AF32B00AD784F /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomHeaderView.swift; path = NavigationUIViewController/CustomHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		C6C80132283AF39600AD784F /* UIview+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIview+Extention.swift"; path = "NavigationUIViewController/UIview+Extention.swift"; sourceTree = SOURCE_ROOT; };
@@ -110,11 +112,12 @@
 				C6C80130283AF32B00AD784F /* CustomHeaderView.swift */,
 				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
 				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
-				C6C8012C283AF1D800AD784F /* PostView.swift */,
+				C69628712842AA4F008EA800 /* CollectionView.swift */,
 				C6C80134283AF41800AD784F /* DetailViewController.swift */,
 				C6C801462841794800AD784F /* PhotosTableViewCell.swift */,
 				C6C801482841798700AD784F /* PhotosCollectionViewCell.swift */,
 				C6C8014A284179E300AD784F /* PhotosViewController.swift */,
+				C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */,
 				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
 				C6C80132283AF39600AD784F /* UIview+Extention.swift */,
 				C6F1E53827C83B46009765B0 /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 				C6F1E54627C83C1C009765B0 /* ProfileViewController.swift in Sources */,
 				C6C801472841794800AD784F /* PhotosTableViewCell.swift in Sources */,
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
+				C69628722842AA4F008EA800 /* CollectionView.swift in Sources */,
 				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
 				C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */,
 				C6C80133283AF39600AD784F /* UIview+Extention.swift in Sources */,
@@ -220,8 +224,8 @@
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
 				C6C80135283AF41800AD784F /* DetailViewController.swift in Sources */,
 				C6C801492841798700AD784F /* PhotosCollectionViewCell.swift in Sources */,
+				C696286E2842A797008EA800 /* AvatarAnimationViewController.swift in Sources */,
 				C6F953A4281DD09A005E8B6F /* Color.swift in Sources */,
-				C6C8012D283AF1D800AD784F /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

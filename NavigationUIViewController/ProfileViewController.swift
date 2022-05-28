@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
         tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.identifier)
         return tableView
     }()
@@ -25,8 +26,27 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = false
         layout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setStatusBarColor()
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func setStatusBarColor() {
+
+        let statusbarView = UIView()
+        statusbarView.backgroundColor = UIColor.systemGray6
+        view.addSubview(statusbarView)
+
+        NSLayoutConstraint.activate([
+            
+        statusbarView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0),
+        statusbarView.topAnchor.constraint(equalTo: view.topAnchor),
+        statusbarView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
     
     private func layout() {
@@ -46,7 +66,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postView.count
+        return postView.count + 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
