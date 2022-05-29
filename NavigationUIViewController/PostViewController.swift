@@ -11,10 +11,12 @@ class PostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let vc = FeedViewController()
 
         let titlePost = UILabel()
-        titlePost.text = myPost.title
-        self.title = myPost.title
+        titlePost.text = vc.myPost.title
+        self.title = vc.myPost.title
         navigationItem.titleView = titlePost
         view.backgroundColor = .systemPink
         let imageForInfo = UIImage(systemName: "highlighter")

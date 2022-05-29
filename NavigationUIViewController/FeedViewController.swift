@@ -31,10 +31,13 @@ class FeedViewController: UIViewController {
         let postViewController = PostViewController()
         navigationController?.pushViewController(postViewController, animated: true)
     }
+    
+    struct Post {
+        let title: String
+    }
+
+    var myPost = Post(title: "Пост")
 }
 
-struct Post {
-    let title: String = "Пост"
-}
 
-let myPost = Post()
+
