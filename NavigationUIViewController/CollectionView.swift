@@ -7,26 +7,21 @@
 
 import UIKit
 
-struct CollectionView {
-    var image: UIImage
-    
-    static func makeCollectionView() -> [CollectionView] {
-        var photos = [CollectionView]()
-        
-        photos.append(CollectionView(image: UIImage(named: "1")!))
-        photos.append(CollectionView(image: UIImage(named: "2")!))
-        photos.append(CollectionView(image: UIImage(named: "3")!))
-        photos.append(CollectionView(image: UIImage(named: "4")!))
-        photos.append(CollectionView(image: UIImage(named: "5")!))
-        photos.append(CollectionView(image: UIImage(named: "6")!))
-        photos.append(CollectionView(image: UIImage(named: "7")!))
-        photos.append(CollectionView(image: UIImage(named: "8")!))
-        photos.append(CollectionView(image: UIImage(named: "9")!))
-        photos.append(CollectionView(image: UIImage(named: "10")!))
-        photos.append(CollectionView(image: UIImage(named: "11")!))
-        photos.append(CollectionView(image: UIImage(named: "12")!))
-        
-
-        return photos
+struct CollectionView: Equatable {
+    var image: String
+    init(image: String){
+        self.image = image
     }
 }
+var collectionPhotoView: [CollectionView] = [CollectionView(image: "1"),
+                                             CollectionView(image: "2"),
+                                             CollectionView(image: "3"),
+                                             CollectionView(image: "4"),
+                                             CollectionView(image: "5"),
+                                             CollectionView(image: "6"),
+                                             CollectionView(image: "7"),
+                                             CollectionView(image: "8"),
+                                             CollectionView(image: "9"),
+                                             CollectionView(image: "10"),
+                                             CollectionView(image: "11"),
+                                             CollectionView(image: "12")]

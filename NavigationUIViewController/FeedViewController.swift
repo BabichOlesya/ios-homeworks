@@ -66,20 +66,20 @@ class FeedViewController: UIViewController {
 
 struct PostView {
     let author: String
-    let image: UIImage
+    let image: String
     let description: String
     var likes: Int
     var views: Int
-    var isLikes: Bool
-    var isViews: Bool
+    var isLiked: Bool
+    var isViewed: Bool
     
     static func makePostView() -> [PostView] {
         var newsLine = [PostView]()
         
-        newsLine.append(PostView(author: "Olaf Scholz", image: UIImage(named: "Olaf_Scholz_1984")!, description: "Look! I found an old photo. Am I cute boy?", likes: 794, views: 1036, isLikes: false, isViews: false))
-        newsLine.append(PostView(author: "Ursula Gertrud von der Leyen", image: UIImage(named: "Ursula")!, description: "My husband caught yesterday while fishing these crucian", likes: 234, views: 765, isLikes: false, isViews: false))
-        newsLine.append(PostView(author: "Gerhard Fritz Kurt Schröder", image: UIImage(named: "1-format43")!, description: "Look into my honest eyes, how can they lie?", likes: 12, views: 894, isLikes: false, isViews: false))
-        newsLine.append(PostView(author: "Frank-Walter Steinmeier", image: UIImage(named:"weather")!, description: "Guys, let's go on a picnic, they promise good weather", likes: 11467, views: 12547, isLikes: false, isViews: false))
+        newsLine.append(PostView(author: "Olaf Scholz", image: "Olaf_Scholz_1984", description: "Look! I found an old photo. Am I cute boy?", likes: 794, views: 1036, isLiked: false, isViewed: false))
+        newsLine.append(PostView(author: "Ursula Gertrud von der Leyen", image: "Ursula", description: "My husband caught yesterday while fishing these crucian", likes: 234, views: 765, isLiked: false, isViewed: false))
+        newsLine.append(PostView(author: "Gerhard Fritz Kurt Schröder", image: "1-format43", description: "Look into my honest eyes, how can they lie?", likes: 12, views: 894, isLiked: false, isViewed: false))
+        newsLine.append(PostView(author: "Frank-Walter Steinmeier", image: "weather", description: "Guys, let's go on a picnic, they promise good weather", likes: 11467, views: 12547, isLiked: false, isViewed: false))
         
         return newsLine
     }

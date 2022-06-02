@@ -9,9 +9,31 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
     
-    let collectionPhotoView = CollectionView.makeCollectionView()
+    private lazy var whiteView: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Фото"
+        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
+    private lazy var arrowView: UIImageView = {
+        let arrow = UIImage(systemName: "arrow.right")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let arrowView = UIImageView()
+        arrowView.image = arrow
+        arrowView.clipsToBounds = true
+        arrowView.translatesAutoresizingMaskIntoConstraints = false
+        return arrowView
+    }()
+
     private lazy var photoTable1: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "1"))
         imageView.contentMode = .scaleAspectFill
@@ -57,21 +79,6 @@ class PhotosTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.text = "Фото"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let transitionButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "arrow.forward"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -82,46 +89,39 @@ class PhotosTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupCell (_ photo: CollectionView) {
-        photoTable1.image = photo.image
-        photoTable2.image = photo.image
-        photoTable3.image = photo.image
-        photoTable4.image = photo.image
-    }
      
     private func layout() {
         
-        var constraints = [NSLayoutConstraint]()
-        
-        contentView.addSubview(photoStackView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(transitionButton)
+        contentView.addSubview(whiteView)
+        whiteView.addSubview(titleLabel)
+        whiteView.addSubview(arrowView)
+        whiteView.addSubview(photoStackView)
         photoStackView.addArrangedSubview(photoTable1)
         photoStackView.addArrangedSubview(photoTable2)
         photoStackView.addArrangedSubview(photoTable3)
         photoStackView.addArrangedSubview(photoTable4)
         
-        constraints.append(titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12))
-        constraints.append(titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12))
+        NSLayoutConstraint.activate([
         
-        constraints.append(photoStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12))
-        constraints.append(photoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12))
-        constraints.append(photoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12))
-        constraints.append(photoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12))
-        constraints.append(photoStackView.heightAnchor.constraint(equalTo: photoTable1.widthAnchor, multiplier: 1))
-        
-        constraints.append(transitionButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12))
-        constraints.append(transitionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12))
-        constraints.append(transitionButton.heightAnchor.constraint(equalToConstant: 15))
-//        constraints.append(transitionButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor))
-        
-        for views in photoStackView.arrangedSubviews {
-            constraints.append(views.heightAnchor.constraint(equalToConstant: 70))
-            constraints.append(views.widthAnchor.constraint(lessThanOrEqualToConstant: 70))
-        }
-        
-        NSLayoutConstraint.activate(constraints)
-    }
-    
+        whiteView.topAnchor.constraint(equalTo: contentView.topAnchor),
+        whiteView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+        whiteView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+        whiteView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
+        titleLabel.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 12.0),
+        titleLabel.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor, constant: 12.0),
+
+        arrowView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor, constant: -12.0),
+        arrowView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+        arrowView.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
+        arrowView.widthAnchor.constraint(equalTo: arrowView.heightAnchor, multiplier: 1.0),
+
+        photoStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12.0),
+        photoStackView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor, constant: -12.0),
+        photoStackView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor, constant: 12.0),
+        photoStackView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor, constant: -12.0),
+
+        photoTable1.heightAnchor.constraint(equalTo: photoTable1.widthAnchor, multiplier: 1.0)
+        ])
+    }
 }

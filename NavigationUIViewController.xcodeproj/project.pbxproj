@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C65EEBD92848313000540CA4 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EEBD82848313000540CA4 /* Protocols.swift */; };
+		C65EEBDB2848320A00540CA4 /* DetailPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EEBDA2848320A00540CA4 /* DetailPhotoView.swift */; };
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
 		C696286E2842A797008EA800 /* AvatarAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */; };
 		C69628722842AA4F008EA800 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69628712842AA4F008EA800 /* CollectionView.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C65EEBD82848313000540CA4 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C65EEBDA2848320A00540CA4 /* DetailPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailPhotoView.swift; path = NavigationUIViewController/DetailPhotoView.swift; sourceTree = SOURCE_ROOT; };
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnimationViewController.swift; sourceTree = "<group>"; };
 		C69628712842AA4F008EA800 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = NavigationUIViewController/CollectionView.swift; sourceTree = SOURCE_ROOT; };
@@ -110,17 +114,18 @@
 				C6F1E52F27C83B44009765B0 /* AppDelegate.swift */,
 				C6F1E53127C83B44009765B0 /* SceneDelegate.swift */,
 				C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */,
+				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
+				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
+				C6C80134283AF41800AD784F /* DetailViewController.swift */,
+				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
 				C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */,
 				C6C80130283AF32B00AD784F /* CustomHeaderView.swift */,
-				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
-				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
 				C69628712842AA4F008EA800 /* CollectionView.swift */,
-				C6C80134283AF41800AD784F /* DetailViewController.swift */,
 				C6C801462841794800AD784F /* PhotosTableViewCell.swift */,
-				C6C801482841798700AD784F /* PhotosCollectionViewCell.swift */,
 				C6C8014A284179E300AD784F /* PhotosViewController.swift */,
+				C6C801482841798700AD784F /* PhotosCollectionViewCell.swift */,
+				C65EEBDA2848320A00540CA4 /* DetailPhotoView.swift */,
 				C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */,
-				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
 				C6C80132283AF39600AD784F /* UIview+Extention.swift */,
 				C6F1E53827C83B46009765B0 /* Assets.xcassets */,
 				C6F1E53A27C83B46009765B0 /* LaunchScreen.storyboard */,
@@ -136,6 +141,7 @@
 				C69628732842BCAA008EA800 /* Log.swift */,
 				C6F953A3281DD09A005E8B6F /* Color.swift */,
 				C6F953A5281DD0C2005E8B6F /* Extentions.swift */,
+				C65EEBD82848313000540CA4 /* Protocols.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -219,12 +225,14 @@
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
 				C69628722842AA4F008EA800 /* CollectionView.swift in Sources */,
 				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
+				C65EEBD92848313000540CA4 /* Protocols.swift in Sources */,
 				C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */,
 				C6C80133283AF39600AD784F /* UIview+Extention.swift in Sources */,
 				C6C8014B284179E300AD784F /* PhotosViewController.swift in Sources */,
 				C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */,
 				C6C80131283AF32B00AD784F /* CustomHeaderView.swift in Sources */,
 				C6F1E54A27C83C76009765B0 /* InfoViewController.swift in Sources */,
+				C65EEBDB2848320A00540CA4 /* DetailPhotoView.swift in Sources */,
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
 				C6C80135283AF41800AD784F /* DetailViewController.swift in Sources */,
 				C6C801492841798700AD784F /* PhotosCollectionViewCell.swift in Sources */,
