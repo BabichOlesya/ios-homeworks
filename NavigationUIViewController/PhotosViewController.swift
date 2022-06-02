@@ -7,33 +7,7 @@
 
 import UIKit
 
-struct CollectionView {
-    var image: UIImage
-    
-    static func makeCollectionView() -> [CollectionView] {
-        var photos = [CollectionView]()
-        
-        photos.append(CollectionView(image: UIImage(named: "1")!))
-        photos.append(CollectionView(image: UIImage(named: "2")!))
-        photos.append(CollectionView(image: UIImage(named: "3")!))
-        photos.append(CollectionView(image: UIImage(named: "4")!))
-        photos.append(CollectionView(image: UIImage(named: "5")!))
-        photos.append(CollectionView(image: UIImage(named: "6")!))
-        photos.append(CollectionView(image: UIImage(named: "7")!))
-        photos.append(CollectionView(image: UIImage(named: "8")!))
-        photos.append(CollectionView(image: UIImage(named: "9")!))
-        photos.append(CollectionView(image: UIImage(named: "10")!))
-        photos.append(CollectionView(image: UIImage(named: "11")!))
-        photos.append(CollectionView(image: UIImage(named: "12")!))
-        
-
-        return photos
-    }
-}
-
 class PhotosViewController: UIViewController {
-    
-    private var collectionPhotoView = CollectionView.makeCollectionView()
     
     private enum Constants {
         static let itemCount: CGFloat = 3
@@ -57,17 +31,13 @@ class PhotosViewController: UIViewController {
         return collection
     }()
     
+    let detailPhotoView = DetailPhotoView()
+    
     private func itemSize(for width: CGFloat, with spacing: CGFloat) -> CGSize {
         let neededWidth = width - 4 * spacing
         let itemWidth = floor(neededWidth / Constants.itemCount)
         return CGSize(width: itemWidth, height: itemWidth)
     }
-    
-    lazy var photo: UIImageView = {
-        let photo = UIImageView()
-        photo.translatesAutoresizingMaskIntoConstraints = false
-        return photo
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,25 +51,22 @@ class PhotosViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    func set(image: CollectionView) {
-        photo.image = image.image
-        
-    }
     
     private func setupView() {
-        collectionPhotoView = CollectionView.makeCollectionView()
+        detailPhotoView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
+        view.addSubview(detailPhotoView)
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            detailPhotoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            detailPhotoView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            detailPhotoView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            detailPhotoView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
@@ -121,7 +88,7 @@ extension PhotosViewController: UICollectionViewDataSource {
         
         cell.backgroundColor = .systemGray2
         let photo = collectionPhotoView[indexPath.row]
-        cell.photoImageView.image = photo.image
+        cell.photoImageView.image = UIImage(named: photo.image)
         cell.photoImageView.contentMode = .scaleAspectFill
         return cell
     }
@@ -148,5 +115,29 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         sideInset
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            let image = collectionPhotoView[indexPath.item].image
+            self.detailPhotoView.setDetailImage(image: image)
+            self.detailPhotoView.alpha = 1
+            self.title = ""
+            self.navigationController?.navigationBar.backgroundColor = .white
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        let cell = collectionView.cellForItem(at: indexPath)
+        self.collectionView.addSubview(cell!)
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        
+        let cell = collectionView.cellForItem(at: indexPath)
+        if (cell?.superview != nil) {
+            cell?.removeFromSuperview()
+        }
+        return true
+    }
 }
-
