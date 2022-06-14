@@ -8,7 +8,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     struct LikeView: LikeViewProtocol {
         let author: String
         let description: String
@@ -23,7 +23,7 @@ class CustomTableViewCell: UITableViewCell {
     var likesCount = 0
     var isLiked = false
 
-    private let whiteView: UIView = {
+    private lazy var whiteView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
@@ -32,49 +32,54 @@ class CustomTableViewCell: UITableViewCell {
         return view
     }()
     
-    private let authorLabel: UILabel = {
+    private lazy var authorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.text = "authorLabel"
+        label.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
         return label
     }()
     
-    private let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.setContentCompressionResistancePriority(UILayoutPriority(750), for: .vertical)
         imageView.clipsToBounds = true
         return imageView
     }()
     
-    private let descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         label.text = "descriptionLabel"
+        label.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .vertical)
+        label.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         return label
     }()
     
-    private let likesLabel: UILabel = {
+    private lazy var likesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .systemGray6
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .light)
         label.numberOfLines = 0
         label.text = "likesLabel"
+        label.isUserInteractionEnabled = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(likesLabelClick))
         label.addGestureRecognizer(tapGesture)
         return label
     }()
     
-    private let viewsLabel: UILabel = {
+    private lazy var viewsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .systemGray6
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .light)
         label.numberOfLines = 0
         label.text = "viewsLabel"
         return label

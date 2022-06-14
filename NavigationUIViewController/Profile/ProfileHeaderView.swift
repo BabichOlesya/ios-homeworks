@@ -13,7 +13,7 @@ class ProfileHeaderView: UIView {
         let profileImage = UIImage(named: "merkel")
         let profileImageView = UIImageView(image: profileImage)
         profileImageView.contentMode = .scaleAspectFit
-        profileImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        profileImageView.layer.shadowOffset = CGSize(width: 4, height: 4)
         profileImageView.layer.borderWidth = 0.1
         profileImageView.layer.cornerRadius = 83.0
         profileImageView.layer.masksToBounds = true
@@ -55,9 +55,9 @@ class ProfileHeaderView: UIView {
         textField.minimumFontSize = 0.5
         textField.returnKeyType = .done
         textField.autocapitalizationType = .words
-        textField.font = .systemFont(ofSize: 15)
-        textField.textColor = .black
-        textField.backgroundColor = .systemGray4
+        textField.font = .systemFont(ofSize: 16, weight: .regular)
+        textField.textColor = .systemGray4
+        textField.backgroundColor = .white
         textField.borderStyle = .none
         textField.returnKeyType = .next
         textField.keyboardType = .default
@@ -83,9 +83,10 @@ class ProfileHeaderView: UIView {
     private lazy var status: UITextView = {
         let status = UITextView()
         status.backgroundColor = .white
-        status.font = .systemFont(ofSize: 20)
+        status.font = .systemFont(ofSize: 18, weight: .regular)
         status.textColor = .systemGray4
-        status.text = "Статус"
+        status.layer.cornerRadius = 4
+//        status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
     }()
@@ -135,12 +136,12 @@ class ProfileHeaderView: UIView {
         constraints.append(stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
         constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
         constraints.append(stackView.heightAnchor.constraint(equalToConstant: 180))
-        
+
         constraints.append(showButton.centerXAnchor.constraint(equalTo: self.centerXAnchor))
-        constraints.append(showButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20))
-        constraints.append(showButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
-        constraints.append(showButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
-        constraints.append(showButton.heightAnchor.constraint(equalToConstant: 40))
+        constraints.append(showButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16))
+        constraints.append(showButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16))
+        constraints.append(showButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16))
+        constraints.append(showButton.heightAnchor.constraint(equalToConstant: 50))
 
 
         NSLayoutConstraint.activate(constraints)
