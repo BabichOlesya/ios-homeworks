@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+<<<<<<< HEAD
     
     private let profileHeaderView: UIView = {
         let profileHearderView = ProfileHeaderView()
@@ -30,5 +31,11 @@ class ProfileViewController: UIViewController {
         constraints.append(profileHeaderView.bottomAnchor.constraint(equalTo: view.bottomAnchor))
         constraints.append(profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor))
         NSLayoutConstraint.activate(constraints)
+=======
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+>>>>>>> develop-iosui
     }
 }

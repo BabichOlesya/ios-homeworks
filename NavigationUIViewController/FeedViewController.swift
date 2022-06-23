@@ -31,6 +31,7 @@ class FeedViewController: UIViewController {
         let postViewController = PostViewController()
         navigationController?.pushViewController(postViewController, animated: true)
     }
+<<<<<<< HEAD
 }
 
 struct Post {
@@ -38,3 +39,15 @@ struct Post {
 }
 
 let myPost = Post()
+=======
+    
+    struct Post {
+        let title: String
+    }
+
+    var myPost = Post(title: "Пост")
+}
+
+
+
+>>>>>>> develop-iosui
