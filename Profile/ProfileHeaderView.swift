@@ -63,9 +63,9 @@ class ProfileHeaderView: UIView {
     
     private var status: UITextField = {
         let status = UITextField()
-        status.backgroundColor = .lightGray
+        status.backgroundColor = .white
         status.font = .italicSystemFont(ofSize: 20)
-        status.textColor = .systemGray4
+        status.textColor = .white
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
