@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
+        title = "Профиль"
         view.addSubview(profileHeaderView)
         addConstraints()
     }
