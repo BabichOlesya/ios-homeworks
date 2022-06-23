@@ -17,12 +17,17 @@
 >>>>>>> origin/develop-iosui
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
 <<<<<<< HEAD
+		C696286E2842A797008EA800 /* AvatarAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */; };
+		C69628722842AA4F008EA800 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69628712842AA4F008EA800 /* CollectionView.swift */; };
+=======
+<<<<<<< HEAD
 		C69C287528483D6400873F46 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C287428483D6400873F46 /* PhotoCollection.swift */; };
 		C69C287728483F2500873F46 /* DetailPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C287628483F2500873F46 /* DetailPhotoView.swift */; };
 		C69C2879284843D800873F46 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C2878284843D800873F46 /* Protocols.swift */; };
 =======
 <<<<<<< HEAD
 		C6C8012D283AF1D800AD784F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012C283AF1D800AD784F /* PostView.swift */; };
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
 		C6C8012F283AF26A00AD784F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */; };
 		C6C80131283AF32B00AD784F /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C80130283AF32B00AD784F /* CustomHeaderView.swift */; };
@@ -62,12 +67,17 @@
 >>>>>>> origin/develop-iosui
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 <<<<<<< HEAD
+		C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAnimationViewController.swift; sourceTree = "<group>"; };
+		C69628712842AA4F008EA800 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = NavigationUIViewController/CollectionView.swift; sourceTree = SOURCE_ROOT; };
+=======
+<<<<<<< HEAD
 		C69C287428483D6400873F46 /* PhotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
 		C69C287628483F2500873F46 /* DetailPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoView.swift; sourceTree = "<group>"; };
 		C69C2878284843D800873F46 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 =======
 <<<<<<< HEAD
 		C6C8012C283AF1D800AD784F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
 		C6C8012E283AF26A00AD784F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = NavigationUIViewController/CustomTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C6C80130283AF32B00AD784F /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomHeaderView.swift; path = NavigationUIViewController/CustomHeaderView.swift; sourceTree = SOURCE_ROOT; };
@@ -173,11 +183,19 @@
 				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
 				C69C287428483D6400873F46 /* PhotoCollection.swift */,
 				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
+<<<<<<< HEAD
+				C69628712842AA4F008EA800 /* CollectionView.swift */,
+=======
+>>>>>>> origin/develop-iosui
 				C6C80134283AF41800AD784F /* DetailViewController.swift */,
 				C6C801462841794800AD784F /* PhotosTableViewCell.swift */,
 				C6C801482841798700AD784F /* PhotosCollectionViewCell.swift */,
 				C6C8014A284179E300AD784F /* PhotosViewController.swift */,
+<<<<<<< HEAD
+				C696286D2842A797008EA800 /* AvatarAnimationViewController.swift */,
+=======
 				C69C287628483F2500873F46 /* DetailPhotoView.swift */,
+>>>>>>> origin/develop-iosui
 				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
 				C6C80132283AF39600AD784F /* UIview+Extention.swift */,
 				C6F1E53827C83B46009765B0 /* Assets.xcassets */,
@@ -283,9 +301,13 @@
 				C6C801472841794800AD784F /* PhotosTableViewCell.swift in Sources */,
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
 <<<<<<< HEAD
+				C69628722842AA4F008EA800 /* CollectionView.swift in Sources */,
+=======
+<<<<<<< HEAD
 				C69C287728483F2500873F46 /* DetailPhotoView.swift in Sources */,
 =======
 <<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
 				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
 <<<<<<< HEAD
@@ -309,7 +331,10 @@
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
 				C6C80135283AF41800AD784F /* DetailViewController.swift in Sources */,
 				C6C801492841798700AD784F /* PhotosCollectionViewCell.swift in Sources */,
+				C696286E2842A797008EA800 /* AvatarAnimationViewController.swift in Sources */,
 				C6F953A4281DD09A005E8B6F /* Color.swift in Sources */,
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -317,6 +342,7 @@
 =======
 				C6237BAD2838413400739403 /* PostView.swift in Sources */,
 				C6237BB32838446900739403 /* DetailViewController.swift in Sources */,
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
 			);

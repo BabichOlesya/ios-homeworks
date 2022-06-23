@@ -11,25 +11,12 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-
+        
         let titlePost = UILabel()
-<<<<<<< HEAD
         titlePost.text = "Пост"
         titlePost.font = UIFont.systemFont(ofSize: 20)
-=======
-        titlePost.text = myPost.title
-        self.title = myPost.title
-=======
-        
-        let vc = FeedViewController()
 
-        let titlePost = UILabel()
-        titlePost.text = vc.myPost.title
-        self.title = vc.myPost.title
->>>>>>> develop-iosui
-        navigationItem.titleView = titlePost
->>>>>>> origin/develop-iosui
+        navigationItem.titleView = titlePosti
         view.backgroundColor = .systemPink
         navigationItem.titleView = titlePost
         let imageForInfo = UIImage(systemName: "highlighter")

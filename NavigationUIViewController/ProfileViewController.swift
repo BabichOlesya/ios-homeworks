@@ -7,23 +7,11 @@
 
 import UIKit
 
-<<<<<<< HEAD
 class ProfileViewController: UIViewController, ChangeLikesDelegate, ChangeViewsDelegate {
     
     private var postView = PostView.makePostView()
     private var likesCount = 0
 
-=======
-class ProfileViewController: UIViewController {
-<<<<<<< HEAD
-    
-    private let postView = PostView.makePostView()
-    
-<<<<<<< HEAD
-    private let postView = PostView.makePostView()
->>>>>>> origin/develop-iosui
-
-=======
     private let profileHeaderView: UIView = {
         let profileHearderView = ProfileHeaderView()
         profileHearderView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +19,6 @@ class ProfileViewController: UIViewController {
         return profileHearderView
     } ()
     
->>>>>>> origin/develop-iosui
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,11 +32,6 @@ class ProfileViewController: UIViewController {
         return tableView
     }()
     
-<<<<<<< HEAD
-    
-=======
-<<<<<<< HEAD
->>>>>>> origin/develop-iosui
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -86,7 +68,6 @@ class ProfileViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-=======
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -126,14 +107,10 @@ class ProfileViewController: UIViewController {
         constraints.append(tableView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor))
 
         NSLayoutConstraint.activate(constraints)
-=======
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
->>>>>>> develop-iosui
->>>>>>> origin/develop-iosui
-    }
     
     func viewsChanged(at indexPath: IndexPath) {
         postView[indexPath.row - 1].views += 1
@@ -209,7 +186,6 @@ extension ProfileViewController: UITableViewDelegate {
             self.navigationController?.present(detailVC, animated: true)
         }
     }
-<<<<<<< HEAD
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         300
@@ -219,6 +195,4 @@ extension ProfileViewController: UITableViewDelegate {
         let header = CustomHeaderView()
         return header
     }
-=======
->>>>>>> origin/develop-iosui
 }

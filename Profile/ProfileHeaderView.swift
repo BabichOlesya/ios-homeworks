@@ -9,30 +9,37 @@ import UIKit
 
 class ProfileHeaderView: UIView {
     
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let profileImage = UIImage(named: "merkel")
         let profileImageView = UIImageView(image: profileImage)
-<<<<<<< HEAD
         profileImageView.contentMode = .scaleAspectFit
+        profileImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        profileImageView.layer.borderWidth = 0.1
         profileImageView.layer.cornerRadius = 83.0
         profileImageView.layer.masksToBounds = true
+        profileImageView.isUserInteractionEnabled = true
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentToFullScreen))
+        profileImageView.addGestureRecognizer(tapGesture)
         return profileImageView
     }()
     
-    private let name: UILabel = {
+    @objc func presentToFullScreen() {
+        guard let toVC = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.rootViewController else { return }
+        let customViewController = AvatarAnimationViewController()
+        customViewController.modalPresentationStyle = .overFullScreen
+        customViewController.modalTransitionStyle = .crossDissolve
+
+        let transition: CATransition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.fade
+        self.window?.layer.add(transition, forKey: nil)
+        toVC.present(customViewController, animated: false, completion: nil)
+    }
+    
+    private lazy var name: UILabel = {
         let name = UILabel()
-=======
-        profileImageView.frame = CGRect(x: 16, y: 120, width: 170, height: 170)
-        profileImageView.contentMode = .scaleAspectFit
-        profileImageView.backgroundColor = .white
-        profileImageView.layer.cornerRadius = 83.0
-        profileImageView.layer.masksToBounds = true
-        self.addSubview(profileImageView)
-
-
-        let name = UILabel(frame: CGRect(x: 200, y: 120, width: 200, height: 80))
->>>>>>> origin/develop-iosui
         name.text = "Angela D.Merkel"
         name.font = .systemFont(ofSize: 18, weight: .bold)
         name.adjustsFontSizeToFitWidth = true
@@ -41,7 +48,7 @@ class ProfileHeaderView: UIView {
         return name
     }()
     
-    private let textField: UITextField = {
+    lazy var textField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Введите статус"
         textField.adjustsFontSizeToFitWidth = true
@@ -60,7 +67,7 @@ class ProfileHeaderView: UIView {
         return textField
     }()
     
-    private let showButton: UIButton = {
+    private lazy var showButton: UIButton = {
         let showButton = UIButton()
         showButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         showButton.setTitle("Установить статус", for: .normal)
@@ -69,27 +76,15 @@ class ProfileHeaderView: UIView {
         showButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         showButton.layer.cornerRadius = 4
         showButton.layer.shadowOpacity = 0.7
-<<<<<<< HEAD
         showButton.translatesAutoresizingMaskIntoConstraints = false
         return showButton
     }()
     
-    private var status: UITextField = {
-        let status = UITextField()
-<<<<<<< HEAD
+    private lazy var status: UITextView = {
+        let status = UITextView()
         status.backgroundColor = .white
-=======
-<<<<<<< HEAD
-        status.backgroundColor = .white
-=======
-=======
+        status.font = .systemFont(ofSize: 20)
         self.addSubview(showButton)
-
->>>>>>> origin/develop-iosui
-        status.backgroundColor = .lightGray
->>>>>>> origin/develop-iosui
->>>>>>> origin/develop-iosui
-        status.font = .italicSystemFont(ofSize: 20)
         status.textColor = .systemGray4
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
@@ -113,6 +108,7 @@ class ProfileHeaderView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -132,7 +128,7 @@ class ProfileHeaderView: UIView {
         labelStackView.addArrangedSubview(name)
         labelStackView.addArrangedSubview(status)
         labelStackView.addArrangedSubview(textField)
-        
+
         var constraints = [NSLayoutConstraint]()
         
         constraints.append(stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
@@ -146,6 +142,7 @@ class ProfileHeaderView: UIView {
         constraints.append(showButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
         constraints.append(showButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
         constraints.append(showButton.heightAnchor.constraint(equalToConstant: 40))
+
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -165,4 +162,3 @@ class ProfileHeaderView: UIView {
         endEditing(true)
     }
 }
-
