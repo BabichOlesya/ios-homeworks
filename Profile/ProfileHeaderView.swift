@@ -12,6 +12,7 @@ class ProfileHeaderView: UIView {
     let profileImageView: UIImageView = {
         let profileImage = UIImage(named: "merkel")
         let profileImageView = UIImageView(image: profileImage)
+<<<<<<< HEAD
         profileImageView.contentMode = .scaleAspectFit
         profileImageView.layer.cornerRadius = 83.0
         profileImageView.layer.masksToBounds = true
@@ -21,6 +22,17 @@ class ProfileHeaderView: UIView {
     
     private let name: UILabel = {
         let name = UILabel()
+=======
+        profileImageView.frame = CGRect(x: 16, y: 120, width: 170, height: 170)
+        profileImageView.contentMode = .scaleAspectFit
+        profileImageView.backgroundColor = .white
+        profileImageView.layer.cornerRadius = 83.0
+        profileImageView.layer.masksToBounds = true
+        self.addSubview(profileImageView)
+
+
+        let name = UILabel(frame: CGRect(x: 200, y: 120, width: 200, height: 80))
+>>>>>>> origin/develop-iosui
         name.text = "Angela D.Merkel"
         name.font = .systemFont(ofSize: 18, weight: .bold)
         name.adjustsFontSizeToFitWidth = true
@@ -57,12 +69,17 @@ class ProfileHeaderView: UIView {
         showButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         showButton.layer.cornerRadius = 4
         showButton.layer.shadowOpacity = 0.7
+<<<<<<< HEAD
         showButton.translatesAutoresizingMaskIntoConstraints = false
         return showButton
     }()
     
     private var status: UITextField = {
         let status = UITextField()
+=======
+        self.addSubview(showButton)
+
+>>>>>>> origin/develop-iosui
         status.backgroundColor = .lightGray
         status.font = .italicSystemFont(ofSize: 20)
         status.textColor = .systemGray4
