@@ -2,7 +2,11 @@
 //  PostView.swift
 //  NavigationUIViewController
 //
+<<<<<<< HEAD
+//  Created by Олеся Бабич on 23.5.22..
+=======
 //  Created by Олеся Бабич on 20.5.22..
+>>>>>>> origin/develop-iosui
 //
 
 import UIKit

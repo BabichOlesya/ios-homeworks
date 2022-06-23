@@ -8,7 +8,7 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 <<<<<<< HEAD
@@ -25,12 +25,12 @@ class PostViewController: UIViewController {
         self.title = vc.myPost.title
 >>>>>>> develop-iosui
         navigationItem.titleView = titlePost
-        view.backgroundColor = myColor
+        view.backgroundColor = .systemPink
         let imageForInfo = UIImage(systemName: "highlighter")
         let buttonPost = UIBarButtonItem(image: imageForInfo , style: .done, target: self, action: #selector(clickButtonPost))
         navigationItem.rightBarButtonItem = buttonPost
     }
-    
+
     @objc func clickButtonPost() {
         let infoViewController = InfoViewController()
         navigationController?.pushViewController(infoViewController, animated: true)

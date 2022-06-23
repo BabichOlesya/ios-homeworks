@@ -79,11 +79,15 @@ class ProfileHeaderView: UIView {
 <<<<<<< HEAD
         status.backgroundColor = .white
 =======
+<<<<<<< HEAD
+        status.backgroundColor = .white
+=======
 =======
         self.addSubview(showButton)
 
 >>>>>>> origin/develop-iosui
         status.backgroundColor = .lightGray
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
         status.font = .italicSystemFont(ofSize: 20)
         status.textColor = .white
@@ -105,7 +109,7 @@ class ProfileHeaderView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 45
+        stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

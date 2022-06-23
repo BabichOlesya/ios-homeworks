@@ -12,6 +12,10 @@ class ProfileViewController: UIViewController {
     
     private let postView = PostView.makePostView()
     
+<<<<<<< HEAD
+    private let postView = PostView.makePostView()
+
+=======
     private let profileHeaderView: UIView = {
         let profileHearderView = ProfileHeaderView()
         profileHearderView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +23,7 @@ class ProfileViewController: UIViewController {
         return profileHearderView
     } ()
     
+>>>>>>> origin/develop-iosui
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +34,22 @@ class ProfileViewController: UIViewController {
         return tableView
     }()
     
+<<<<<<< HEAD
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        layout()
+    }
+    
+    private func layout() {
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+=======
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -74,6 +95,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
 >>>>>>> develop-iosui
+>>>>>>> origin/develop-iosui
     }
 }
 
@@ -104,6 +126,18 @@ extension ProfileViewController: UITableViewDelegate {
         detailVC.setupVC(post: postView[indexPath.row])
         present(detailVC, animated: true)
     }
+<<<<<<< HEAD
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        300
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = CustomHeaderView()
+        return header
+    }
+=======
+>>>>>>> origin/develop-iosui
 }
 
  
