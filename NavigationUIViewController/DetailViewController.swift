@@ -12,51 +12,96 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    var author: String?
+    var descriptionText: String?
+    var image: String?
+    var likes: Int?
+    var views: Int?
+    var index: IndexPath?
+    var isViewed: Bool?
 
-    private let scrollView: UIScrollView = {
+    private var viewsCount = 0
+
+    weak var viewsDelegate: ChangeViewsDelegate?
+
+    private func updateViews() {
+        if var views = views {
+            if let viewed = isViewed {
+                if !viewed {
+                    views += 1
+                    viewsCount = views
+                } else {
+                    viewsCount = views
+                }
+            }
+        }
+    }
+
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
 
-    private let contentView: UIView = {
+    private lazy var contentView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .white
         return $0
     }(UIView())
     
-    let authorLabel: UILabel = {
+    private lazy var authorLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.backgroundColor = .clear
+        $0.numberOfLines = 2
+        $0.textColor = .black
+        $0.text = author
+        $0.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .vertical)
+        $0.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         return $0
     }(UILabel())
     
-    let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFill
+        $0.backgroundColor = .black
+        if let image = image {
+            $0.image = UIImage(named: image)
+        }
         return $0
     }(UIImageView())
     
-    private let textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = .systemFont(ofSize: 16, weight: .light)
         $0.numberOfLines = 0
+        $0.textColor = .systemGray
+        $0.text = descriptionText
+        $0.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
         return $0
     }(UILabel())
     
-    private let likesLabel: UILabel = {
+    private lazy var likesLabel: UILabel = {
+        
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        updateViews()
+        $0.backgroundColor = .systemGray6
+        $0.font = .systemFont(ofSize: 14, weight: .light)
+        $0.numberOfLines = 0
+        if let likes = likes {
+            $0.text = "Likes: \(likes)"
+        }
+        $0.setContentCompressionResistancePriority(UILayoutPriority(750), for: .vertical)
+        return $0
+    }(UILabel())
+    
+    private lazy var viewsLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .systemGray6
         $0.font = .systemFont(ofSize: 14, weight: .light)
         $0.numberOfLines = 0
-        return $0
-    }(UILabel())
-    
-    private let viewsLabel: UILabel = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .systemGray6
-        $0.font = .systemFont(ofSize: 14, weight: .light)
-        $0.numberOfLines = 0
+        $0.setContentCompressionResistancePriority(UILayoutPriority(750), for: .vertical)
+        $0.text = "Views: \(viewsCount)"
         return $0
     }(UILabel())
 
@@ -64,14 +109,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         layout()
         view.backgroundColor = .white
-    }
-
-    func setupVC(post: PostView) {
-        authorLabel.text = post.author
-        postImageView.image = post.image
-        textLabel.text = post.description
-        likesLabel.text = "Likes: \(post.likes)"
-        viewsLabel.text = "Views: \(post.views)"
+        
+        guard let index = index else {return}
+        guard let viewed = isViewed else {return}
+        if !viewed {
+            self.viewsDelegate?.viewsChanged(at: index)
+        }
     }
     
     private func layout() {
@@ -135,8 +178,14 @@ class DetailViewController: UIViewController {
 }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/develop-iosui
 
     
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui

@@ -14,6 +14,10 @@ class PostViewController: UIViewController {
 <<<<<<< HEAD
 
         let titlePost = UILabel()
+<<<<<<< HEAD
+        titlePost.text = "Пост"
+        titlePost.font = UIFont.systemFont(ofSize: 20)
+=======
         titlePost.text = myPost.title
         self.title = myPost.title
 =======
@@ -25,7 +29,9 @@ class PostViewController: UIViewController {
         self.title = vc.myPost.title
 >>>>>>> develop-iosui
         navigationItem.titleView = titlePost
+>>>>>>> origin/develop-iosui
         view.backgroundColor = .systemPink
+        navigationItem.titleView = titlePost
         let imageForInfo = UIImage(systemName: "highlighter")
         let buttonPost = UIBarButtonItem(image: imageForInfo , style: .done, target: self, action: #selector(clickButtonPost))
         navigationItem.rightBarButtonItem = buttonPost

@@ -12,11 +12,27 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+    
+    struct LikeView: LikeViewProtocol {
+        let author: String
+        let description: String
+        let image: String
+        var likes: Int
+        var views: Int
+        var isLiked: Bool
+        var isViewed: Bool
+    }
+    
+    weak var likesDelegate: ChangeLikesDelegate?
+    var likesCount = 0
+    var isLiked = false
 
     private let whiteView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 0
         return view
     }()
     
@@ -24,7 +40,6 @@ class CustomTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .semibold)
-//        label.backgroundColor = .systemGray4
         label.text = "authorLabel"
         return label
     }()
@@ -53,6 +68,9 @@ class CustomTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 14, weight: .light)
         label.numberOfLines = 0
         label.text = "likesLabel"
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(likesLabelClick))
+        label.addGestureRecognizer(tapGesture)
         return label
     }()
     
@@ -66,28 +84,26 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
+    @objc private func likesLabelClick(){
+        self.likesDelegate?.likesChanged()
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layout()
-        customizeCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(_ post: PostView) {
-     
-        authorLabel.text = post.author
-        postImageView.image = post.image
-        descriptionLabel.text = post.description
-        likesLabel.text = "Likes: \(post.likes)"
-        viewsLabel.text = "Views: \(post.views)"
-    }
-    
-    
-    private func customizeCell() {
-        whiteView.layer.borderColor = UIColor.systemGray.cgColor
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.authorLabel.text = nil
+        self.descriptionLabel.text = nil
+        self.postImageView.image = nil
+        self.likesLabel.text = nil
+        self.viewsLabel.text = nil
     }
     
     private func layout () {
@@ -141,5 +157,18 @@ class CustomTableViewCell: UITableViewCell {
                 viewsLabel.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor, constant: -inset)
             ])
         }
-    
+}
+
+
+extension CustomTableViewCell: Setupable {
+    func setup(with likeView: LikeViewProtocol) {
+        guard let likeView = likeView as? LikeView else { return }
+        
+
+        self.authorLabel.text = likeView.author
+        self.descriptionLabel.text = likeView.description
+        self.postImageView.image = UIImage(named: likeView.image)
+        self.likesLabel.text = "Likes: " + String(likeView.likes)
+        self.viewsLabel.text = "Views: " + String(likeView.views)
+    }
 }

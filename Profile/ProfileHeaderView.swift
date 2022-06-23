@@ -51,11 +51,11 @@ class ProfileHeaderView: UIView {
         textField.font = .systemFont(ofSize: 15)
         textField.textColor = .black
         textField.backgroundColor = .systemGray4
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .none
         textField.returnKeyType = .next
         textField.keyboardType = .default
         textField.clearButtonMode = .always
-        textField.alpha = 0
+        textField.layer.cornerRadius = 7
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -66,7 +66,7 @@ class ProfileHeaderView: UIView {
         showButton.setTitle("Установить статус", for: .normal)
         showButton.backgroundColor = myColor
         showButton.layer.shadowColor = UIColor.black.cgColor
-        showButton.layer.shadowOffset = CGSize(width: 4, height: 4)
+        showButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         showButton.layer.cornerRadius = 4
         showButton.layer.shadowOpacity = 0.7
 <<<<<<< HEAD
@@ -90,7 +90,7 @@ class ProfileHeaderView: UIView {
 >>>>>>> origin/develop-iosui
 >>>>>>> origin/develop-iosui
         status.font = .italicSystemFont(ofSize: 20)
-        status.textColor = .white
+        status.textColor = .systemGray4
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
@@ -100,7 +100,7 @@ class ProfileHeaderView: UIView {
         let labelstackView = UIStackView()
         labelstackView.axis = .vertical
         labelstackView.distribution = .fillEqually
-        labelstackView.spacing = 15
+        labelstackView.spacing = 8
         labelstackView.translatesAutoresizingMaskIntoConstraints = false
         return labelstackView
     }()
@@ -109,7 +109,7 @@ class ProfileHeaderView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 15
+        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -126,36 +126,43 @@ class ProfileHeaderView: UIView {
     private func addConstraints() {
         
         self.addSubview(stackView)
+        self.addSubview(showButton)
         stackView.addArrangedSubview(profileImageView)
         stackView.addArrangedSubview(labelStackView)
         labelStackView.addArrangedSubview(name)
         labelStackView.addArrangedSubview(status)
         labelStackView.addArrangedSubview(textField)
-        labelStackView.addArrangedSubview(showButton)
-
+        
         var constraints = [NSLayoutConstraint]()
         
         constraints.append(stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
-        constraints.append(stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20))
+        constraints.append(stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10))
         constraints.append(stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
         constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
-        constraints.append(stackView.heightAnchor.constraint(equalToConstant: 220))
+        constraints.append(stackView.heightAnchor.constraint(equalToConstant: 180))
+        
+        constraints.append(showButton.centerXAnchor.constraint(equalTo: self.centerXAnchor))
+        constraints.append(showButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20))
+        constraints.append(showButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
+        constraints.append(showButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
+        constraints.append(showButton.heightAnchor.constraint(equalToConstant: 40))
 
         NSLayoutConstraint.activate(constraints)
     }
     
     @objc func buttonPressed() {
-        status.text = textField.text
-        status.textColor = .black
-        textField.text = ""
-        UIView.animate(withDuration: 1.0) {
-            self.textField.alpha = 1
-            self.endEditing(true)
-            if self.status.hasText {
-                self.showButton.setTitle("Изменить статус", for: .normal)
-                self.textField.alpha = 0
+        guard let status = textField.text else {return}
+        if !status.isEmpty {
+            UIView.animate(withDuration: 0.3) {
+                self.status.text = self.textField.text
+                self.textField.text = .none
+            } completion: { _ in
             }
         }
+        if status.isEmpty {
+            textField.trigger()
+        }
+        endEditing(true)
     }
 }
 
