@@ -7,12 +7,31 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class ProfileViewController: UIViewController, ChangeLikesDelegate, ChangeViewsDelegate {
     
     private var postView = PostView.makePostView()
     private var likesCount = 0
 
+=======
+class ProfileViewController: UIViewController {
+<<<<<<< HEAD
+    
+    private let postView = PostView.makePostView()
+    
+<<<<<<< HEAD
+    private let postView = PostView.makePostView()
+>>>>>>> origin/develop-iosui
 
+=======
+    private let profileHeaderView: UIView = {
+        let profileHearderView = ProfileHeaderView()
+        profileHearderView.translatesAutoresizingMaskIntoConstraints = false
+        profileHearderView.backgroundColor = .white
+        return profileHearderView
+    } ()
+    
+>>>>>>> origin/develop-iosui
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +45,11 @@ class ProfileViewController: UIViewController, ChangeLikesDelegate, ChangeViewsD
         return tableView
     }()
     
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -63,6 +86,53 @@ class ProfileViewController: UIViewController, ChangeLikesDelegate, ChangeViewsD
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+=======
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.backgroundColor = .systemGray2
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addConstraints()
+    }
+    
+    private func addConstraints() {
+        
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(profileHeaderView)
+        stackView.addArrangedSubview(tableView)
+        
+        var constraints = [NSLayoutConstraint]()
+
+        constraints.append(stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+        constraints.append(stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
+        constraints.append(stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+        constraints.append(stackView.topAnchor.constraint(equalTo: view.topAnchor))
+
+        constraints.append(profileHeaderView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor))
+        constraints.append(profileHeaderView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor))
+        constraints.append(profileHeaderView.topAnchor.constraint(equalTo:  stackView.topAnchor))
+        constraints.append(profileHeaderView.heightAnchor.constraint(equalToConstant: 300))
+
+        constraints.append(tableView.topAnchor.constraint(equalTo: profileHeaderView.bottomAnchor))
+        constraints.append(tableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor))
+        constraints.append(tableView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor))
+        constraints.append(tableView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor))
+
+        NSLayoutConstraint.activate(constraints)
+=======
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+>>>>>>> develop-iosui
+>>>>>>> origin/develop-iosui
     }
     
     func viewsChanged(at indexPath: IndexPath) {
@@ -139,6 +209,7 @@ extension ProfileViewController: UITableViewDelegate {
             self.navigationController?.present(detailVC, animated: true)
         }
     }
+<<<<<<< HEAD
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         300
@@ -148,4 +219,6 @@ extension ProfileViewController: UITableViewDelegate {
         let header = CustomHeaderView()
         return header
     }
+=======
+>>>>>>> origin/develop-iosui
 }
