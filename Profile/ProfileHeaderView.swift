@@ -28,12 +28,17 @@ class ProfileHeaderView: UIView {
         
         let profileImage = UIImage(named: "merkel")
         let profileImageView = UIImageView(image: profileImage)
-        profileImageView.frame = CGRect(x: 15, y: 120, width: 170, height: 220)
+        profileImageView.frame = CGRect(x: 16, y: 120, width: 170, height: 170)
+        profileImageView.contentMode = .scaleAspectFit
+        profileImageView.backgroundColor = .white
+        profileImageView.layer.cornerRadius = 83.0
+        profileImageView.layer.masksToBounds = true
         self.addSubview(profileImageView)
+
 
         let name = UILabel(frame: CGRect(x: 200, y: 120, width: 200, height: 80))
         name.text = "Angela D.Merkel"
-        name.font = .systemFont(ofSize: 23, weight: .bold)
+        name.font = .systemFont(ofSize: 18, weight: .bold)
         name.adjustsFontSizeToFitWidth = true
         name.minimumScaleFactor = 0.5
         self.addSubview(name)
@@ -57,9 +62,9 @@ class ProfileHeaderView: UIView {
         showButton.setTitle("Установить статус", for: .normal)
         showButton.backgroundColor = .systemBlue
         showButton.layer.shadowColor = UIColor.black.cgColor
-        showButton.layer.shadowOffset = CGSize(width: 5, height: 5)
-        showButton.layer.cornerRadius = 7
-        showButton.layer.shadowOpacity = 0.3
+        showButton.layer.shadowOffset = CGSize(width: 4, height: 4)
+        showButton.layer.cornerRadius = 4
+        showButton.layer.shadowOpacity = 0.7
         self.addSubview(showButton)
 
         status.backgroundColor = .lightGray
