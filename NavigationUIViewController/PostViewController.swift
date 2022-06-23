@@ -15,6 +15,8 @@ class PostViewController: UIViewController {
         let titlePost = UILabel()
         titlePost.text = "Пост"
         titlePost.font = UIFont.systemFont(ofSize: 20)
+
+        navigationItem.titleView = titlePosti
         view.backgroundColor = .systemPink
         navigationItem.titleView = titlePost
         let imageForInfo = UIImage(systemName: "highlighter")

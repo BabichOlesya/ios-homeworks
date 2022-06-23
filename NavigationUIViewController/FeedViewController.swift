@@ -84,3 +84,5 @@ struct PostView {
         return newsLine
     }
 }
+
+let myPost = Post()

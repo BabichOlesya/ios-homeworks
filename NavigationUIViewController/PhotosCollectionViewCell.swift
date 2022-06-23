@@ -9,11 +9,6 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    private var startingFrame: CGRect?
-    private var buttonClose = UIButton()
-    private var backView = UIView(frame: .zero)
-    private var zoomingImageView = UIImageView(frame: .zero)
-    
     private let whiteView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,12 +38,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        photoImageView.image = nil
-    }
-    
     
     private func layout () {
         [whiteView, photoImageView].forEach {

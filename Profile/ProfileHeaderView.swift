@@ -84,6 +84,7 @@ class ProfileHeaderView: UIView {
         let status = UITextView()
         status.backgroundColor = .white
         status.font = .systemFont(ofSize: 20)
+        self.addSubview(showButton)
         status.textColor = .systemGray4
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
