@@ -48,6 +48,7 @@ class FeedViewController: UIViewController {
         let postViewController = PostViewController()
         navigationController?.pushViewController(postViewController, animated: true)
     }
+<<<<<<< HEAD
     
     private func addConstraint() {
         
@@ -61,6 +62,9 @@ class FeedViewController: UIViewController {
         constraints.append(buttonStackView.heightAnchor.constraint(equalToConstant: 90))
         NSLayoutConstraint.activate(constraints)
     }
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 }
 
 struct Post {
@@ -68,3 +72,15 @@ struct Post {
 }
 
 let myPost = Post()
+=======
+    
+    struct Post {
+        let title: String
+    }
+
+    var myPost = Post(title: "Пост")
+}
+
+
+
+>>>>>>> develop-iosui

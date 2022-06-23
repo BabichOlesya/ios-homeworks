@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		C6237BAD2838413400739403 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BAC2838413400739403 /* PostView.swift */; };
 		C6237BAF2838421900739403 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BAE2838421900739403 /* CustomTableViewCell.swift */; };
 		C6237BB12838431E00739403 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BB02838431E00739403 /* UIView+Extension.swift */; };
 		C6237BB32838446900739403 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BB22838446900739403 /* DetailViewController.swift */; };
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
+=======
+>>>>>>> develop-iosui
 		C6F1E53027C83B44009765B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E52F27C83B44009765B0 /* AppDelegate.swift */; };
 		C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E53127C83B44009765B0 /* SceneDelegate.swift */; };
 		C6F1E53927C83B46009765B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F1E53827C83B46009765B0 /* Assets.xcassets */; };
@@ -26,11 +32,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		C6237BAC2838413400739403 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C6237BAE2838421900739403 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C6237BB02838431E00739403 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C6237BB22838446900739403 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> develop-iosui
 		C6F1E52C27C83B44009765B0 /* NavigationUIViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationUIViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F1E52F27C83B44009765B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F1E53127C83B44009765B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +69,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		C6793ABE27D171290011535C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +86,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> develop-iosui
 		C6F1E52327C83B44009765B0 = {
 			isa = PBXGroup;
 			children = (
 				C6F1E52E27C83B44009765B0 /* NavigationUIViewController */,
+<<<<<<< HEAD
 				C6793ABE27D171290011535C /* Profile */,
+=======
+>>>>>>> develop-iosui
 				C6F1E52D27C83B44009765B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,8 +111,14 @@
 		C6F1E52E27C83B44009765B0 /* NavigationUIViewController */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				C6F953A2281DD086005E8B6F /* Other */,
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 				C6793ABF27D171440011535C /* Controller */,
+=======
+>>>>>>> develop-iosui
 				C6F1E52F27C83B44009765B0 /* AppDelegate.swift */,
 				C6F1E53127C83B44009765B0 /* SceneDelegate.swift */,
 				C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */,
@@ -108,7 +132,10 @@
 				C6F1E53A27C83B46009765B0 /* LaunchScreen.storyboard */,
 				C6F1E53D27C83B46009765B0 /* Info.plist */,
 			);
+<<<<<<< HEAD
 			indentWidth = 4;
+=======
+>>>>>>> develop-iosui
 			path = NavigationUIViewController;
 			sourceTree = "<group>";
 		};
@@ -198,9 +225,15 @@
 				C6F953A6281DD0C3005E8B6F /* Extentions.swift in Sources */,
 				C6F1E54627C83C1C009765B0 /* ProfileViewController.swift in Sources */,
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
+<<<<<<< HEAD
 				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
 				C6237BAF2838421900739403 /* CustomTableViewCell.swift in Sources */,
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 				C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */,
+=======
+>>>>>>> develop-iosui
 				C6F1E54A27C83C76009765B0 /* InfoViewController.swift in Sources */,
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
 				C6F953A4281DD09A005E8B6F /* Color.swift in Sources */,
@@ -346,7 +379,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = G77WRV3QTD;
+=======
+>>>>>>> develop-iosui
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NavigationUIViewController/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -373,7 +409,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = G77WRV3QTD;
+=======
+>>>>>>> develop-iosui
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NavigationUIViewController/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

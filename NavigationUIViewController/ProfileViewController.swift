@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+<<<<<<< HEAD
     
     private let postView = PostView.makePostView()
     
@@ -67,6 +68,12 @@ class ProfileViewController: UIViewController {
         constraints.append(tableView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor))
 
         NSLayoutConstraint.activate(constraints)
+=======
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+>>>>>>> develop-iosui
     }
 }
 
