@@ -137,7 +137,7 @@ extension ProfileViewController: UITableViewDelegate {
         }
             postView[indexPath.row - 1].isViewed = true
             self.navigationController?.present(detailVC, animated: true)
-        }7
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
