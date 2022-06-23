@@ -64,7 +64,7 @@ class ProfileHeaderView: UIView {
         let showButton = UIButton()
         showButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         showButton.setTitle("Установить статус", for: .normal)
-        showButton.backgroundColor = .systemBlue
+        showButton.backgroundColor = myColor
         showButton.layer.shadowColor = UIColor.black.cgColor
         showButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         showButton.layer.cornerRadius = 4
@@ -76,13 +76,17 @@ class ProfileHeaderView: UIView {
     
     private var status: UITextField = {
         let status = UITextField()
+<<<<<<< HEAD
+        status.backgroundColor = .white
+=======
 =======
         self.addSubview(showButton)
 
 >>>>>>> origin/develop-iosui
         status.backgroundColor = .lightGray
+>>>>>>> origin/develop-iosui
         status.font = .italicSystemFont(ofSize: 20)
-        status.textColor = .systemGray4
+        status.textColor = .white
         status.text = "Статус"
         status.translatesAutoresizingMaskIntoConstraints = false
         return status
@@ -130,7 +134,7 @@ class ProfileHeaderView: UIView {
         constraints.append(stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
         constraints.append(stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20))
         constraints.append(stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20))
-        constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20))
+        constraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35))
         constraints.append(stackView.heightAnchor.constraint(equalToConstant: 220))
 
         NSLayoutConstraint.activate(constraints)

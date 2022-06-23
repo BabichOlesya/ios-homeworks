@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
+		C6237BAD2838413400739403 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BAC2838413400739403 /* PostView.swift */; };
+		C6237BAF2838421900739403 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BAE2838421900739403 /* CustomTableViewCell.swift */; };
+		C6237BB12838431E00739403 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BB02838431E00739403 /* UIView+Extension.swift */; };
+		C6237BB32838446900739403 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6237BB22838446900739403 /* DetailViewController.swift */; };
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 		C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6793AC027D171D80011535C /* ProfileHeaderView.swift */; };
 =======
 >>>>>>> develop-iosui
@@ -19,10 +26,20 @@
 		C6F1E54627C83C1C009765B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */; };
 		C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E54727C83C4F009765B0 /* PostViewController.swift */; };
 		C6F1E54A27C83C76009765B0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1E54927C83C76009765B0 /* InfoViewController.swift */; };
+		C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F953A0281DCFD0005E8B6F /* LogInViewController.swift */; };
+		C6F953A4281DD09A005E8B6F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F953A3281DD09A005E8B6F /* Color.swift */; };
+		C6F953A6281DD0C3005E8B6F /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F953A5281DD0C2005E8B6F /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 <<<<<<< HEAD
+		C6237BAC2838413400739403 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C6237BAE2838421900739403 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C6237BB02838431E00739403 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C6237BB22838446900739403 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 		C6793AC027D171D80011535C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 =======
 >>>>>>> develop-iosui
@@ -36,6 +53,9 @@
 		C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C6F1E54727C83C4F009765B0 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C6F1E54927C83C76009765B0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		C6F953A0281DCFD0005E8B6F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		C6F953A3281DD09A005E8B6F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C6F953A5281DD0C2005E8B6F /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C6793AC027D171D80011535C /* ProfileHeaderView.swift */,
+				C6F953A0281DCFD0005E8B6F /* LogInViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -91,12 +112,19 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+				C6F953A2281DD086005E8B6F /* Other */,
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 				C6793ABF27D171440011535C /* Controller */,
 =======
 >>>>>>> develop-iosui
 				C6F1E52F27C83B44009765B0 /* AppDelegate.swift */,
 				C6F1E53127C83B44009765B0 /* SceneDelegate.swift */,
 				C6F1E54527C83C1C009765B0 /* ProfileViewController.swift */,
+				C6237BAE2838421900739403 /* CustomTableViewCell.swift */,
+				C6237BAC2838413400739403 /* PostView.swift */,
+				C6237BB22838446900739403 /* DetailViewController.swift */,
 				C6F1E54327C83BE0009765B0 /* FeedViewController.swift */,
 				C6F1E54727C83C4F009765B0 /* PostViewController.swift */,
 				C6F1E54927C83C76009765B0 /* InfoViewController.swift */,
@@ -109,6 +137,16 @@
 =======
 >>>>>>> develop-iosui
 			path = NavigationUIViewController;
+			sourceTree = "<group>";
+		};
+		C6F953A2281DD086005E8B6F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C6F953A3281DD09A005E8B6F /* Color.swift */,
+				C6F953A5281DD0C2005E8B6F /* Extentions.swift */,
+				C6237BB02838431E00739403 /* UIView+Extension.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,15 +220,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6F1E53027C83B44009765B0 /* AppDelegate.swift in Sources */,
+				C6237BB12838431E00739403 /* UIView+Extension.swift in Sources */,
 				C6F1E54427C83BE0009765B0 /* FeedViewController.swift in Sources */,
+				C6F953A6281DD0C3005E8B6F /* Extentions.swift in Sources */,
 				C6F1E54627C83C1C009765B0 /* ProfileViewController.swift in Sources */,
 				C6F1E53227C83B44009765B0 /* SceneDelegate.swift in Sources */,
 <<<<<<< HEAD
+				C6F953A1281DCFD0005E8B6F /* LogInViewController.swift in Sources */,
+				C6237BAF2838421900739403 /* CustomTableViewCell.swift in Sources */,
+=======
+<<<<<<< HEAD
+>>>>>>> origin/develop-iosui
 				C6793AC127D171D80011535C /* ProfileHeaderView.swift in Sources */,
 =======
 >>>>>>> develop-iosui
 				C6F1E54A27C83C76009765B0 /* InfoViewController.swift in Sources */,
 				C6F1E54827C83C4F009765B0 /* PostViewController.swift in Sources */,
+				C6F953A4281DD09A005E8B6F /* Color.swift in Sources */,
+				C6237BAD2838413400739403 /* PostView.swift in Sources */,
+				C6237BB32838446900739403 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

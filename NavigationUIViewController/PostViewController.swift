@@ -25,7 +25,7 @@ class PostViewController: UIViewController {
         self.title = vc.myPost.title
 >>>>>>> develop-iosui
         navigationItem.titleView = titlePost
-        view.backgroundColor = .systemPink
+        view.backgroundColor = myColor
         let imageForInfo = UIImage(systemName: "highlighter")
         let buttonPost = UIBarButtonItem(image: imageForInfo , style: .done, target: self, action: #selector(clickButtonPost))
         navigationItem.rightBarButtonItem = buttonPost
